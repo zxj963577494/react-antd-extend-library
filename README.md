@@ -2,6 +2,10 @@
 
 React Antd Extend Library 是一个用于二次封装 [Ant Design](https://ant.design/) 组件以适合自身业务需求的组件的模版。
 
+## 来源
+
+[Ant Plus](https://github.com/nanxiaobei/ant-plus)
+
 ## 使用
 
 ```jsx harmony
