@@ -1,0 +1,73 @@
+{
+  "name": "react-antd-extend-library",
+  "version": "0.0.1",
+  "description": "react ant-design extend library boilerplate",
+  "keywords": [
+    "react",
+    "ant",
+    "antd",
+    "ant-design",
+    "antd-extend-library-boilerplate"
+  ],
+  "license": "MIT",
+  "author": "zhengxujiang <963577494@qq.com> (https://github.com/zxj963577494)",
+  "homepage": "https://github.com/zxj963577494/react-antd-extend-library",
+  "repository": "github:zxj963577494/react-antd-extend-library",
+  "bugs": "https://github.com/zxj963577494/react-antd-extend-library/issues",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "files": [
+    "lib",
+    "es",
+    "src"
+  ],
+  "scripts": {
+    "clean": "rimraf lib es",
+    "build:commonjs": "cross-env NODE_ENV=cjs rollup -c -o lib/index.js",
+    "build:es": "cross-env NODE_ENV=esm rollup -c -o es/index.js",
+    "build": "yarn clean && yarn build:commonjs && yarn build:es",
+    "dev": "yarn docz dev",
+    "doc": "yarn docz build"
+  },
+  "peerDependencies": {
+    "antd": "^3.12.3",
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/runtime": "^7.2.0",
+    "antd": "^3.12.3",
+    "babel-core": "^7.0.0-bridge",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-import": "^1.11.0",
+    "cross-env": "^5.2.0",
+    "docz": "^0.13.7",
+    "docz-plugin-css": "^0.11.0",
+    "docz-theme-default": "^0.13.7",
+    "husky": "^1.2.0",
+    "lint-staged": "^8.1.0",
+    "prettier": "^1.15.3",
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0",
+    "rimraf": "^2.6.2",
+    "rollup": "^1.1.0",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-eslint": "^5.0.0",
+    "rollup-plugin-sass": "^1.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{jsx,scss}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
